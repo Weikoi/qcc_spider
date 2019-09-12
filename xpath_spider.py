@@ -3,7 +3,7 @@ import time
 from lxml import etree
 import pickle as pk
 
-url = "https://www.qichacha.com/firm_ff3aac2898ef5e5f12f3d31032898c7c.html"
+url = "https://www.qichacha.com/firm_576c21e3468a6b178bbf291e4820e896.html"
 ulist = []
 
 
@@ -22,10 +22,12 @@ def parse_page(url):
         table = selector.xpath('.//section[@id="Cominfo"]/table')[0]
 
         # 名称
+        com_name = selector.xpath('.//div[@class="row title jk-tip"]/h1/text()')[0]
+        print(com_name)
 
         # 省份 todo 所属地区？？
-        credit_no = table.xpath('//tr[8]/td[2]/text()')[0].strip()
-        print(credit_no)
+        province = table.xpath('//tr[8]/td[2]/text()')[0].strip()
+        print(province)
 
         # 城市 todo ???
 
@@ -68,6 +70,8 @@ def parse_page(url):
         print(bussiness_scope)
 
         # 网址
+        com_name = selector.xpath('.//span[@class="cvlu"]/a/text()')[0].strip()
+        print(com_name)
 
         # 电话号码
 
