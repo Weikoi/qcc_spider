@@ -93,6 +93,15 @@ def parse_columns():
         url = 'https://www.qichacha.com/gongsi_area.html?prov=' + 'AH' + '&city=' + str(340100) + '&p=' + str(
             i)
         print(url)
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:69.0) Gecko/20100101 Firefox/69.0'
+
+        }
+        html = requests.get(url, headers=headers).text
+        selector = etree.HTML(html)
+
+        table = selector.xpath('.//table[@class="m_srchList"]//tr/td[2]/a/@href')
+        print(table)
 
 
 if __name__ == '__main__':
