@@ -88,7 +88,12 @@ def parse_page(url):
         print(e)
 
 
+def parse_columns():
+    for i in range(1, 501):
+        url = 'https://www.qichacha.com/gongsi_area.html?prov=' + 'AH' + '&city=' + str(340100) + '&p=' + str(
+            i)
+        print(url)
+
+
 if __name__ == '__main__':
-    parse_page(url)
-    print(ulist)
-    # pk.dump(ulist, file=open("./raw_data/985.pkl", 'wb'))
+    parse_columns()
