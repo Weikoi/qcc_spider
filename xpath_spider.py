@@ -45,9 +45,6 @@ def parse_page(url, province, city_code):
 
         table = selector.xpath('.//section[@id="Cominfo"]/table')[0]
 
-        print("====================================================================")
-        print("")
-
         # 公司名称
         com_name = selector.xpath('.//div[@class="row title jk-tip"]/h1/text()')[0]
         print(com_name)
@@ -112,6 +109,9 @@ def parse_page(url, province, city_code):
 
         # 更多号码
         pass
+
+        print("====================================================================")
+        print("")
 
         info_dict['com_name'] = com_name
         info_dict['province'] = province
